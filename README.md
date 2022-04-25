@@ -1,3 +1,7 @@
-# BookStore
+# Reto 2
 
-El proyecto a desplegar en este laboratorio es una aplicación web. La aplicación permite visualizar una colección de recursos, para efectos de este caso, libros. Igualmente, cuando el usuario selecciona alguno de los recursos, se ofrece una vista con información detallada sobre el recurso seleccionado. La información de los recursos (libros) se encuentra almacenada en base de datos. La aplicación tiene tres (vistas): raíz (“/”, home), descripción detallada de los recursos libros y acerca de.
+## CMS Con docker
+
+## BookStore
+
+En el directorio BookStore se encuentra la documentación de este ejercicio.
