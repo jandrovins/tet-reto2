@@ -1,6 +1,8 @@
 # BookStore
 
-En las carpetas frontend y backend está el desarrollo para el punto 2 del reto.
+Se crearon 2 contenedores (uno para frontend y otro backend); el frontend es un contenedor que tiene un servidor nginx con el contenido estático de la página. El nginx tiene implementado HTTPS, y usa un reversed proxy para acceder al backend de la misma máquina (en distinto contenedor). El contenedor backend está basado en una imagen de nodejs, y ejecuta el "server.js" del backend.
+
+En cada carpeta de frontend y backend hay un Dockerfile que define la imagen de cada contenedor.
 
 # Instalación de certificados
 
@@ -26,7 +28,7 @@ Luego se ejecuta Certbot para crear los certificados.
 sudo certbot certonly --standalone --debug -d vincent-tet-reto2.tk
 ```
 
-Teniendo los certificados digitales procedemos a configurar nginx para que use los certificados. Mostramos la sección "server" relevante:
+Los archivos ".pem" creados no los subimos al repo por temas de seguridad. Teniendo los certificados digitales procedemos a configurar nginx para que use los certificados. Mostramos la sección "server" relevante (archivo completo en directorio frontend):
 
 ```
     server {
@@ -64,3 +66,11 @@ Teniendo los certificados digitales procedemos a configurar nginx para que use l
     }
 ```
 
+# Para ejecutarlos
+
+Se crean los contenedores con los comandos:
+
+```
+sudo docker run -dit -p 80:80 -p 443:443 --name frontend1 bookstore-frontend
+sudo docker run -dit --name back1 -p 5000:5000 backend-tet
+```
