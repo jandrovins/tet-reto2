@@ -14,3 +14,5 @@ COPY package*.json ./
 # Bundle app source
 COPY ./build .
 COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./fullchain.pem /etc/letsencrypt/live/vincent-tet-reto2.tk/fullchain.pem
+COPY ./privkey.pem /etc/letsencrypt/live/vincent-tet-reto2.tk/privkey.pem
